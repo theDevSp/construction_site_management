@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--on met les enregistrement ici dans la balise odoo -->
+    <record id='chantier_action' model='ir.actions.act_window'>
+        <field name="name"> Construction Site Management  </field>
+        <field name="res_model">fleet.vehicle.chantier</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="sequence_code_increment" model="ir.sequence">
+        <field name="name">Code Number Sequence</field>
+        <field name="code">fleet.vehicle.chantier.sequence</field>
+        <field name="active">TRUE</field>
+        <field name="prefix">TSK</field>
+        <field name="number_increment">1</field>
+        <field name="number_next">1</field>
+        <field name="padding">3</field>
+        <field name="implementation">standard</field>
+    </record>
+
+    <menuitem name="Construction Site Management" id="fleet_base_menu" />
+    <menuitem name="Chantiers" id="chantier_menu" parent="fleet_base_menu" action="chantier_action"/>
+
+    <record id="chantier_view_form" model="ir.ui.view">
+        <field name="name">Fleet Chantier Form</field>
+        <field name="model">fleet.vehicle.chantier</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="ville"/>
+                            <field name="active"/>
+                            <field name="digital"/>
+                            <field name="type_chantier"/>
+                        </group>
+                       
+                        <group>
+                            <field name="location_id"/>
+                            <field name="chantier_parent_id"/> 
+                            <field name="chantier_ids"/>
+                        </group>
+                        
+                    </group>
+                </sheet>
+                <!-- Mail mixin fields -->
+                <!--
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+                -->
+            </form>
+        </field>
+    </record>
+
+    <record id="chantier_tree" model="ir.ui.view">
+        <field name="name">Fleet vehicle chantier Liste</field>
+        <field name="model">fleet.vehicle.chantier</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="ville"/>
+                <field name="type_chantier"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="chantier_search" model="ir.ui.view">
+        <field name="name">Fleet Vehicle Chantier Recherche</field>
+        <field name="model">fleet.vehicle.chantier</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="ville"/>
+                <field name="type_chantier"/>
+                <!--
+                <filter string="Sans Chauffeurs"
+                        name="without_driver"
+                        domain="[('chauffeur_ids','=',False)]"/>
+                -->
+            </search>
+        </field>
+    </record>
+</odoo>
