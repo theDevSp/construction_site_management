@@ -12,10 +12,11 @@
     'depends': ['base','stock', 'mail'],
 
     # always loaded
-    'data': [
-        #'security/ir.model.access.csv',
+    'data': [         
         'views/views.xml',
         'views/templates.xml',
+        'security/groups.xml',
+        'security/ir.model.access.csv',
         'views/chantier.xml',
     ],
     # only loaded in demonstration mode
