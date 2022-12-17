@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Emplacements" id="emplacement_menu" parent="fleet_base_menu" action="emplacement_action"/>
+</odoo>

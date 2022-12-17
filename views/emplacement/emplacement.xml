@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='emplacement_action' model='ir.actions.act_window'>
+        <field name="name">Construction Site Management - Emplacement</field>
+        <field name="res_model">fleet.vehicle.chantier.emplacement</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <record id="emplacement_view_form" model="ir.ui.view">
+        <field name="name">Fleet Emplacement Form</field>
+        <field name="model">fleet.vehicle.chantier.emplacement</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="chantier_ids" widget="many2many_tags" />
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="emplacement_tree" model="ir.ui.view">
+        <field name="name">Fleet vehicle chantier Liste</field>
+        <field name="model">fleet.vehicle.chantier.emplacement</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="chantier_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="emplacement_search" model="ir.ui.view">
+        <field name="name">Fleet Vehicle Chantier Recherche</field>
+        <field name="model">fleet.vehicle.chantier.emplacement</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="chantier_ids" widget="many2many_tags" />
+            </search>
+        </field>
+    </record>
+</odoo>

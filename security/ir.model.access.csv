@@ -3,3 +3,6 @@ access_construction_site_management,construction_site_management.construction_si
 
 acl_chantier_users,fleet.chantier default,model_fleet_vehicle_chantier,,1,0,0,0
 acl_chantier_admin,fleet.chantier_admin,model_fleet_vehicle_chantier,group_chantier_managers,1,1,1,1
+
+acl_emplacement_users,fleet.vehicle_chantier_emplacement default,model_fleet_vehicle_chantier_emplacement,,1,0,0,0
+acl_emplacement_admin,fleet_vehicle_chantier_emplacement_admin,model_fleet_vehicle_chantier_emplacement,group_emplacement_managers,1,1,1,1

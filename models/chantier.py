@@ -3,7 +3,7 @@ from odoo.exceptions import UserError
 
 class fleet_vehicle_chantier(models.Model):
 	_name = 'fleet.vehicle.chantier'
-	inherit = ['mail.thread', 'mail.activity.mixin']   # on hérite des deux classes mixin
+	_inherit = ['mail.thread', 'mail.activity.mixin']
 	_description = 'Chantier'
 
 	name = fields.Char('Nom Chantier', required=True)
@@ -23,6 +23,12 @@ class fleet_vehicle_chantier(models.Model):
 		[('Chantier', 'Chantier Principale'), ('Atelier/Stock', 'Atelier/Stock'), ('Citerne Gasoil', 'Citerne Gasoil'),
 		 ('Poste Enrobé', 'Poste Enrobé')],
 		string="Type Chantier", required=True)
+
+	emplacement_ids = fields.Many2many(
+		'fleet.vehicle.chantier.emplacement',
+		string='Emplacements'
+    )
+
 
 	_sql_constraints = [
 		('code_uniq', 'UNIQUE(code)', 'Ce code de chantier est déjà utilisé.'),

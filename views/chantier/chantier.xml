@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <!--on met les enregistrement ici dans la balise odoo -->
     <record id='chantier_action' model='ir.actions.act_window'>
-        <field name="name"> Construction Site Management  </field>
+        <field name="name">Construction Site Management - Chantier</field>
         <field name="res_model">fleet.vehicle.chantier</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,search</field>
     </record>
 
     <record id="sequence_code_increment" model="ir.sequence">
@@ -17,9 +16,6 @@
         <field name="padding">3</field>
         <field name="implementation">standard</field>
     </record>
-
-    <menuitem name="Construction Site Management" id="fleet_base_menu" />
-    <menuitem name="Chantiers" id="chantier_menu" parent="fleet_base_menu" action="chantier_action"/>
 
     <record id="chantier_view_form" model="ir.ui.view">
         <field name="name">Fleet Chantier Form</field>
@@ -35,24 +31,22 @@
                             <field name="active"/>
                             <field name="digital"/>
                             <field name="type_chantier"/>
+                            <field name="emplacement_ids" widget="many2many_tags" />
                         </group>
                        
                         <group>
-                            <field name="location_id"/>
                             <field name="chantier_parent_id"/> 
                             <field name="chantier_ids"/>
+                            <field name="location_id"/>
                         </group>
                         
                     </group>
                 </sheet>
-                <!-- Mail mixin fields -->
-                <!--
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="activity_ids" widget="mail_activity"/>
                     <field name="message_ids" widget="mail_thread"/>
                 </div>
-                -->
             </form>
         </field>
     </record>
