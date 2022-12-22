@@ -29,6 +29,10 @@ class fleet_vehicle_chantier(models.Model):
 		string='Emplacements'
     )
 
+	responsables_ids= fields.Many2many(
+        'responsable.chantier',
+        string = 'Responsables :',
+    )
 
 	_sql_constraints = [
 		('code_uniq', 'UNIQUE(code)', 'Ce code de chantier est déjà utilisé.'),

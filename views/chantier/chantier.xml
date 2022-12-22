@@ -55,7 +55,7 @@
         <field name="name">Fleet vehicle chantier Liste</field>
         <field name="model">fleet.vehicle.chantier</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree class="table">
                 <field name="name"/>
                 <field name="code"/>
                 <field name="ville"/>
