@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="Gestion Chantiers" id="fleet_base_menu" sequence="1"/>
+    <menuitem name="Chantiers et Equipes" id="chantier_main_menu" parent="fleet_base_menu" sequence="1"/>
+    <menuitem name="Chantiers" id="chantier_menu" parent="chantier_main_menu" action="chantier_action" sequence="1"/>
+</odoo>

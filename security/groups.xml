@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.module.category" id="module_construction_site_management">                                
+        <field name="name">Groupe prévilège Chantier</field>                                
+        <field name="description">User access level for this module</field>                                
+        <field name="sequence">1</field>                 
+    </record>
+    <record id="group_chantier_managers" model="res.groups">
+        <field name="name">Chantier Managers</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>      
+        <field name="category_id" ref="module_construction_site_management"></field>      
+    </record>
+    <record id="group_chantier_users" model="res.groups">
+        <field name="name">Chantier Users</field>    
+        <field name="category_id" ref="module_construction_site_management"></field>      
+    </record>
+    <record id="group_emplacement_managers" model="res.groups">
+        <field name="name">Emplacement Managers</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>      
+        <field name="category_id" ref="module_construction_site_management"></field>      
+    </record>
+    <record id="group_emplacement_users" model="res.groups">
+        <field name="name">Emplacement Users</field>    
+        <field name="category_id" ref="module_construction_site_management"></field>      
+    </record>
+</odoo>

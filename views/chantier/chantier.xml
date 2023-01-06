@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id='chantier_action' model='ir.actions.act_window'>
+        <field name="name">Construction Site Management - Chantier</field>
+        <field name="res_model">fleet.vehicle.chantier</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    
+
+    <record id="chantier_view_form" model="ir.ui.view">
+        <field name="name">Fleet Chantier Form</field>
+        <field name="model">fleet.vehicle.chantier</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card border-dark" style="max-width: 20vw;">
+                                <div class="card-header">
+                                    <h5 class="card-title"><field name="code"/></h5>
+                                </div>
+                                <div class="card-body text-dark">
+                                    <p class="card-text"><field name="name"/></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                    <group>
+                        
+                        <group string="CHANTIER INFOS">
+                            <field name="ville"/>
+                            <field name="digital"/>
+                            <field name="type_chantier"/>
+                            <field name="emplacement_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                        </group>
+                       
+                        <group>
+                            <field name="chantier_parent_id" options="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}"/> 
+                            
+                            <field name="location_id"/>
+                        </group>
+                        
+                    </group>
+                    <group string="CHANTIER ASSOCIERS">
+                        <field name="chantier_ids"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="chantier_tree" model="ir.ui.view">
+        <field name="name">Fleet vehicle chantier Liste</field>
+        <field name="model">fleet.vehicle.chantier</field>
+        <field name="arch" type="xml">
+            <tree class="table">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="ville"/>
+                <field name="type_chantier"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="chantier_search" model="ir.ui.view">
+        <field name="name">Fleet Vehicle Chantier Recherche</field>
+        <field name="model">fleet.vehicle.chantier</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="code"/>
+                <field name="ville"/>
+                <field name="type_chantier"/>
+                <!--
+                <filter string="Sans Chauffeurs"
+                        name="without_driver"
+                        domain="[('chauffeur_ids','=',False)]"/>
+                -->
+            </search>
+        </field>
+    </record>
+</odoo>
