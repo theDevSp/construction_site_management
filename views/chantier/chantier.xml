@@ -6,16 +6,7 @@
         <field name="view_mode">tree,form,search</field>
     </record>
 
-    <record id="sequence_code_increment" model="ir.sequence">
-        <field name="name">Code Number Sequence</field>
-        <field name="code">fleet.vehicle.chantier.sequence</field>
-        <field name="active">TRUE</field>
-        <field name="prefix">TSK</field>
-        <field name="number_increment">1</field>
-        <field name="number_next">1</field>
-        <field name="padding">3</field>
-        <field name="implementation">standard</field>
-    </record>
+    
 
     <record id="chantier_view_form" model="ir.ui.view">
         <field name="name">Fleet Chantier Form</field>
@@ -23,23 +14,38 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card border-dark" style="max-width: 20vw;">
+                                <div class="card-header">
+                                    <h5 class="card-title"><field name="code"/></h5>
+                                </div>
+                                <div class="card-body text-dark">
+                                    <p class="card-text"><field name="name"/></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
                     <group>
-                        <group>
-                            <field name="name"/>
-                            <field name="code"/>
+                        
+                        <group string="CHANTIER INFOS">
                             <field name="ville"/>
-                            <field name="active"/>
                             <field name="digital"/>
                             <field name="type_chantier"/>
-                            <field name="emplacement_ids" widget="many2many_tags" />
+                            <field name="emplacement_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
                         </group>
                        
                         <group>
-                            <field name="chantier_parent_id"/> 
-                            <field name="chantier_ids"/>
+                            <field name="chantier_parent_id" options="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}"/> 
+                            
                             <field name="location_id"/>
                         </group>
                         
+                    </group>
+                    <group string="CHANTIER ASSOCIERS">
+                        <field name="chantier_ids"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter">

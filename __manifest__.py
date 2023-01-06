@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Construction Site Management",
-    'summary': "Construction Site Management",
-    'description': "Description of Construction Site Management",
+    'name': "Gestion Chantiers",
+    'summary': "Gestion Chantier",
+    'description': "Ce Module permet la gestion des chantiers, les équipes travaillant sur un chantier, affectation des citerne, affectation des engin ...",
     'category': 'Uncategorized',
     'version': '0.1',
     "license": 'LGPL-3',
@@ -14,8 +14,9 @@
         'views/templates.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',
-        'views/chantier/chantier.xml',        
+        'views/chantier/chantier.xml',
         'views/chantier/menu_chantier.xml',
+        'views/chantier/sequence_chantier.xml',
         'views/emplacement/emplacement.xml',
         'views/emplacement/menu_emplacement.xml',
     ],

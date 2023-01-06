@@ -45,6 +45,13 @@ class fleet_vehicle_chantier(models.Model):
 		if name:
 			domain = ['|', ('name', operator, name), ('code', operator, name)]
 		return self._search(domain + args, limit=limit, access_rights_uid=name_get_uid)
+	
+	def name_get(self):
+		result = []
+		for chantier in self:
+			name = chantier.code + ' - ' + chantier.name
+			result.append((chantier.id, name))
+		return result
 
 	@api.model
 	def create(self, vals):
