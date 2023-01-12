@@ -14,11 +14,16 @@
         'views/templates.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',
+
         'views/chantier/chantier.xml',
+        'views/emplacement/emplacement.xml',
+        'views/responsable/responsable_chantier_view.xml',
+
         'views/chantier/menu_chantier.xml',
         'views/chantier/sequence_chantier.xml',
-        'views/emplacement/emplacement.xml',
         'views/emplacement/menu_emplacement.xml',
+        'views/config/config_menu.xml',
+        'views/responsable/responsable_chantier_menu.xml',
     ],
 
     'demo': [

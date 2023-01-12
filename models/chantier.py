@@ -30,7 +30,7 @@ class fleet_vehicle_chantier(models.Model):
     )
 
 	responsables_ids= fields.Many2many(
-        'responsable.chantier',
+        'hr.responsable.chantier','id',
         string = 'Responsables :',
     )
 
