@@ -23,35 +23,13 @@
         <field name="name">Emplacement Users</field>    
         <field name="category_id" ref="module_construction_site_management"></field>      
     </record>
- 
-    <record id="group_admin_paie" model="res.groups">                                
-        <field name="name">Administrateur de paie</field>
-        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"></field>                                
-        <field name="category_id" ref="module_construction_site_management"></field>                            
+        <record id="group_responsable_users" model="res.groups">
+        <field name="name">Responsable Managers</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>      
+        <field name="category_id" ref="module_construction_site_management"></field>      
     </record>
-    
-    <record id="group_agent_paie" model="res.groups">                                
-        <field name="name">Agent de paie</field>                                
-        <field name="category_id" ref="module_construction_site_management"></field>                            
-    </record>  
-
-    <record id="group_service_analytique" model="res.groups">
-        <field name="name">Service Analytique</field>
-        <field name="category_id" ref="module_construction_site_management"></field>  
-    </record>
-
-    <record id="group_controle_gestion" model="res.groups">
-        <field name="name">Contrôle de Gestion</field>
-        <field name="category_id" ref="module_construction_site_management"></field>
-    </record>
-
-    <record id="group_pointeur" model="res.groups">
-        <field name="name">Pointeur</field>
-        <field name="category_id" ref="module_construction_site_management"></field> 
-    </record>
-
-     <record id="group_cnss_juridique" model="res.groups">
-        <field name="name">CNSS, juridique ...</field>
-        <field name="category_id" ref="module_construction_site_management"></field> 
-    </record>
+    <record id="group_responsable_managers" model="res.groups">
+        <field name="name">Responsable Users</field>    
+        <field name="category_id" ref="module_construction_site_management"></field>      
+    </record> 
 </odoo>
