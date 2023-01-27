@@ -26,7 +26,7 @@ class fleet_vehicle_chantier(models.Model):
 
 	emplacement_ids = fields.Many2many(
 		'fleet.vehicle.chantier.emplacement',
-		string='Emplacements'
+		string='Équipes'
     )
 
 	responsables_ids= fields.Many2many(

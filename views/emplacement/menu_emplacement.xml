@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <menuitem name="Emplacements" id="emplacement_menu" parent="chantier_main_menu" action="emplacement_action"  sequence="2"/>
+    <menuitem name="Equipes" id="emplacement_menu" parent="chantier_main_menu" action="emplacement_action"  sequence="2"/>
 </odoo>

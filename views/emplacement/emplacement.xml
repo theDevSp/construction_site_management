@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <record id='emplacement_action' model='ir.actions.act_window'>
-        <field name="name">Construction Site Management - Emplacement</field>
+        <field name="name">Construction Site Management - Equipes</field>
         <field name="res_model">fleet.vehicle.chantier.emplacement</field>
         <field name="view_mode">tree,form,search</field>
     </record>
 
     <record id="emplacement_view_form" model="ir.ui.view">
-        <field name="name">Fleet Emplacement Form</field>
+        <field name="name">Form Equipe</field>
         <field name="model">fleet.vehicle.chantier.emplacement</field>
         <field name="arch" type="xml">
             <form>
@@ -27,7 +27,7 @@
     </record>
 
     <record id="emplacement_tree" model="ir.ui.view">
-        <field name="name">Fleet vehicle chantier Liste</field>
+        <field name="name">Liste des Equipes</field>
         <field name="model">fleet.vehicle.chantier.emplacement</field>
         <field name="arch" type="xml">
             <tree>
@@ -38,7 +38,7 @@
     </record>
 
     <record id="emplacement_search" model="ir.ui.view">
-        <field name="name">Fleet Vehicle Chantier Recherche</field>
+        <field name="name">Recherche Equipes</field>
         <field name="model">fleet.vehicle.chantier.emplacement</field>
         <field name="arch" type="xml">
             <search>
