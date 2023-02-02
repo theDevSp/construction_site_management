@@ -47,6 +47,9 @@
                     <group string="CHANTIER ASSOCIERS">
                         <field name="chantier_ids"/>
                     </group>
+                    <group>
+                        <field name="responsables_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                    </group>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
@@ -79,11 +82,6 @@
                 <field name="code"/>
                 <field name="ville"/>
                 <field name="type_chantier"/>
-                <!--
-                <filter string="Sans Chauffeurs"
-                        name="without_driver"
-                        domain="[('chauffeur_ids','=',False)]"/>
-                -->
             </search>
         </field>
     </record>
