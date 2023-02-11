@@ -6,8 +6,6 @@
         <field name="view_mode">tree,form,search</field>
     </record>
 
-    
-
     <record id="chantier_view_form" model="ir.ui.view">
         <field name="name">Fleet Chantier Form</field>
         <field name="model">fleet.vehicle.chantier</field>
@@ -15,41 +13,121 @@
             <form>
                 <sheet>
                     <div class="row">
+                        <div class="col-md-1"></div>
                         <div class="col-md-4">
-                            <div class="card border-dark" style="max-width: 20vw;">
-                                <div class="card-header">
-                                    <h5 class="card-title"><field name="code"/></h5>
+                            <div class="card border-dark mb-3 bg-info">
+                                <div class="card-header text-center">
+                                    <h5>Code</h5>
                                 </div>
-                                <div class="card-body text-dark">
-                                    <p class="card-text"><field name="name"/></p>
+                                <div class="card-body text-dark text-center">
+                                    <h1>
+                                        <field name="code"/>
+                                    </h1>
+                                </div>
+                            </div>
+                            <div class="card border-dark mb-3 bg-success">
+                                <div class="card-header text-center">
+                                    <h5>Nom</h5>
+                                </div>
+                                <div class="card-body text-dark text-center">
+                                    <h3><field name="name"/></h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-8">
+                    </div>
+                    <div class="card border-dark mb-3">
+                        <div class="card-header">Informations sur Chantier</div>
+                        <div class="card-body text-dark">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="ville" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <span class="fas fa-building form-control-icon"></span>
+                                            <field name="ville" class="form-control"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="location_id" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <span class="fas fa-city form-control-icon"></span>
+                                            <field name="location_id" class="form-control"/>
+                                        </div>  
+                                    </div>      
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="type_chantier" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <span class="fa fa-city form-control-icon"></span>
+                                            <field name="type_chantier" class="form-control"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="emplacement_ids" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <span class="fas fa-users form-control-icon"></span>
+                                            <field name="emplacement_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="chantier_parent_id" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <span class="fa fa-city form-control-icon"></span>
+                                            <field name="chantier_parent_id" class="form-control" ptions="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="digital" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <field name="digital" class="form-control" widget="boolean_toggle"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <group>
-                        
-                        <group string="CHANTIER INFOS">
-                            <field name="ville"/>
-                            <field name="digital"/>
-                            <field name="type_chantier"/>
-                            <field name="emplacement_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
-                        </group>
-                       
-                        <group>
-                            <field name="chantier_parent_id" options="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}"/> 
-                            
-                            <field name="location_id"/>
-                        </group>
-                        
-                    </group>
-                    <group string="CHANTIER ASSOCIERS">
-                        <field name="chantier_ids"/>
-                    </group>
-                    <group>
-                        <field name="responsables_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
-                    </group>
+
+                    <div class="card border-dark mb-3">
+                        <div class="card-header">Les chantiers associés</div>
+                        <div class="card-body text-dark">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card text-white bg-dark mb-3">
+                                        <div class="card-body">
+                                            <field name="chantier_ids" nolabel="1" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <div class="card border-dark mb-3">
+                        <div class="card-header">Les Responsables sur ce chantier</div>
+                        <div class="card-body text-dark">
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="card text-white bg-dark mb-3">
+                                        <div class="card-body">
+                                            <field name="responsables_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True}" nolabel="1" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </sheet>
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
