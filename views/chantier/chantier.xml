@@ -53,7 +53,7 @@
                                     <div class="main">
                                         <div class="form-group">
                                             <span class="fas fa-city form-control-icon"></span>
-                                            <field name="location_id" class="form-control"/>
+                                            <field name="location_id" class="form-control" options="{'no_create': True, 'no_open': True}"/>
                                         </div>  
                                     </div>      
                                 </div>
@@ -84,7 +84,7 @@
                                     <div class="main">
                                         <div class="form-group">
                                             <span class="fa fa-city form-control-icon"></span>
-                                            <field name="chantier_parent_id" class="form-control" ptions="{'no_open': True, 'no_create': True}" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}"/>
+                                            <field name="chantier_parent_id" class="form-control" options="{'no_create': True, 'no_open': True}" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}"/>
                                         </div>  
                                     </div>
                                 </div>
@@ -92,7 +92,7 @@
                                     <label for="digital" class=""/>
                                     <div class="main">
                                         <div class="form-group">
-                                            <field name="digital" class="form-control" widget="boolean_toggle"/>
+                                            <field name="digital" widget="boolean_toggle"/>
                                         </div>  
                                     </div>
                                 </div>
@@ -103,15 +103,16 @@
                     <div class="card border-dark mb-3">
                         <div class="card-header">Les chantiers associés</div>
                         <div class="card-body text-dark">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="card text-white bg-dark mb-3">
-                                        <div class="card-body">
-                                            <field name="chantier_ids" nolabel="1" class="form-control"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <group>
+                                <field name="chantier_ids" nolabel="1">
+                                    <tree class="table" create="false" edit="false">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="ville"/>
+                                        <field name="type_chantier"/>
+                                    </tree>
+                                </field>
+                            </group>
                         </div>
                     </div> 
                     <div class="card border-dark mb-3">
