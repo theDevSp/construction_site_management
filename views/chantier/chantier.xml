@@ -97,6 +97,62 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label for="simplified_name" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <span class="fas fa-building form-control-icon"></span>
+                                            <field name="simplified_name" class="form-control"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="periodicite" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <span class="fas fa-building form-control-icon"></span>
+                                            <field name="periodicite" class="form-control"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="heure_normal" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <span class="fas fa-building form-control-icon"></span>
+                                            <field name="heure_normal" class="form-control"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <label for="historique_heure_normal_chantier" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <span class="fas fa-users form-control-icon"></span>
+                                            <field name="historique_heure_normal_chantier" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="grant_modification" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <field name="grant_modification" widget="boolean_toggle"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="cofabri" class=""/>
+                                    <div class="main">
+                                        <div class="form-group">
+                                            <field name="cofabri" widget="boolean_toggle"/>
+                                        </div>  
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
