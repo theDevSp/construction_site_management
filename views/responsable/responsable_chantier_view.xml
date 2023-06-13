@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id='responsable_action' model='ir.actions.act_window'>
-        <field name="name"> HR Management - Responsables </field>
-        <field name="res_model">hr.responsable.chantier</field>
-        <field name="view_mode">tree,form,search</field>
-    </record>
-
     <record id="responsable_tree" model="ir.ui.view">
         <field name="name">HR Responsables List</field>
         <field name="model">hr.responsable.chantier</field>
