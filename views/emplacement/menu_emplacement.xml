@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <record id='emplacement_action' model='ir.actions.act_window'>
+        <field name="name">Construction Site Management - Equipes</field>
+        <field name="res_model">fleet.vehicle.chantier.emplacement</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
     <menuitem name="Equipes" id="emplacement_menu" parent="chantier_main_menu" action="emplacement_action"  sequence="2"/>
+    
 </odoo>

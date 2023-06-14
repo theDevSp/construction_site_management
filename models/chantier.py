@@ -17,6 +17,13 @@ class fleet_vehicle_chantier(models.Model):
 	chantier_parent_id = fields.Many2one('fleet.vehicle.chantier','Chantier Parent')
 	chantier_ids = fields.One2many('fleet.vehicle.chantier','chantier_parent_id','Chantiers Liés',readonly=True)
 	
+	simplified_name = fields.Char('Nom Simplifié')
+	cofabri = fields.Boolean('Cofabri')
+	grant_modification = fields.Boolean('Autoriser la modification')
+	periodicite = fields.Selection([("1","Quinzaine"),("2","Mensuelle")],default="1",string="Périodicité",tracking=True)
+	heure_normal = fields.Float('Plafond Heures de travails')
+	historique_heure_normal_chantier = fields.One2many('historique.heur.normal.chantier','chantier_id')
+
     #zone_id = fields.Many2one('fleet.zone.zone', 'Zone')
 
 	type_chantier = fields.Selection(
@@ -76,6 +83,7 @@ class fleet_vehicle_chantier(models.Model):
 			vals.pop('location_id')
 		return super().write(vals)
 
+
 	def action_create_citerne(self):
 		if self.type_chantier != 'Chantier':
 			raise UserError('Vous pouvez associer une Citerne Gasoil que pour un chantier ou ouvrage')
@@ -89,3 +97,25 @@ class fleet_vehicle_chantier(models.Model):
 			'chantier_parent_id': self.id
 		}
 		self.env['fleet.vehicle.chantier'].create(data_citerne_chantier)
+
+
+	# def name_get(self):
+	# 	res = super(fleet_vehicle_chantier, self).name_get()
+	# 	data = []
+	# 	for country in self:
+	# 		display_value = ''
+	# 		display_value += country.code or ""
+	# 		display_value += ' - '
+	# 		display_value += country.name or ""
+	# 		data.append((country.id, display_value))
+	# 		return data
+
+
+
+class historique_heure_normal_chantier(models.Model):
+
+    _name = "historique.heur.normal.chantier"
+
+    heure_normal = fields.Float('Plafond Heures de travail')
+    day = fields.Date('Date d\'application') 
+    chantier_id = fields.Many2one("fleet.vehicle.chantier",u"Chantier")
