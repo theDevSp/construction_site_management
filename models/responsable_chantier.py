@@ -7,7 +7,7 @@ class responsable_chantier(models.Model):
     _inherit = ['mail.thread', 'mail.activity.mixin']
 
 
-    name = fields.Char("Nom")
+    name = fields.Char("Nom", required = True)
     poste = fields.Many2one("hr.job", "Poste occupé")
     type_responsabilite = fields.Selection([("1","Chef Chantier"),("2","Chef Matériel"),("3","Pointeur")],u"Type Responsabilité")
     

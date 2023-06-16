@@ -24,45 +24,41 @@
                             <div class="card-body text-dark">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label for="name" class=""/>
-                                        <div class="main">
-                                            <div class="form-group">
-                                                <span class="fas fa-comment form-control-icon"></span>
-                                                <field name="name" class="form-control"/>
-                                            </div>  
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" ><label for="name" class=""/><i class="fas fa-exclamation-triangle"></i></span>
+                                            </div>
+                                            <field name="name" class="form-control"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label for="poste" class=""/>
-                                        <div class="main">
-                                            <div class="form-group">
-                                                <span class="fa fa-briefcase form-control-icon"></span>
-                                                <field name="poste" class="form-control" options="{'no_create': True, 'no_open': True}"/>
-                                            </div>  
-                                        </div>      
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" ><label for="poste" class=""/></span>
+                                            </div>
+                                            <field name="poste" class="form-control" options="{'no_create': True, 'no_open': True}"/>
+                                        </div> 
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label for="type_responsabilite" class=""/>
-                                        <div class="main">
-                                            <div class="form-group">
-                                                <span class="fas fa-user form-control-icon"></span>
-                                                <field name="type_responsabilite" class="form-control"/>
-                                            </div>  
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" ><label for="type_responsabilite" class=""/></span>
+                                            </div>
+                                            <field name="type_responsabilite" class="form-control"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label for="chantiers_ids" class=""/>
-                                        <div class="main">
-                                            <div class="form-group">
-                                                <span class="fas fa-city form-control-icon"></span>
-                                                <field name="chantiers_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
-                                            </div>  
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" ><label for="chantiers_ids" class=""/></span>
+                                            </div>
+                                            <field name="chantiers_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
                                         </div>
                                     </div>
                                 </div>
