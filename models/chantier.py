@@ -19,10 +19,10 @@ class fleet_vehicle_chantier(models.Model):
 	
 	simplified_name = fields.Char('Nom Simplifié')
 	cofabri = fields.Boolean('Cofabri')
-	grant_modification = fields.Boolean('Autoriser la modification')
+	grant_modification = fields.Boolean('Autoriser modification')
 	periodicite = fields.Selection([("1","Quinzaine"),("2","Mensuelle")],default="1",string="Périodicité",tracking=True)
 	heure_normal = fields.Float('Plafond Heures de travails')
-	historique_heure_normal_chantier = fields.One2many('historique.heur.normal.chantier','chantier_id')
+	historique_heure_normal_chantier = fields.One2many('historique.heur.normal.chantier','chantier_id', string="Historique heure normale")
 
     #zone_id = fields.Many2one('fleet.zone.zone', 'Zone')
 

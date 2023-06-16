@@ -29,57 +29,53 @@
                             </div>
                         </div>
                     </div>
+
                     <div class="card border-dark mb-3">
                         <div class="card-header">Informations sur Chantier</div>
                         <div class="card-body text-dark">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="ville" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <span class="fas fa-building form-control-icon"></span>
-                                            <field name="ville" class="form-control"/>
-                                        </div>  
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" ><label for="ville" class=""/></span>
+                                        </div>
+                                        <field name="ville" class="form-control"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="location_id" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <span class="fas fa-city form-control-icon"></span>
-                                            <field name="location_id" class="form-control" options="{'no_create': True, 'no_open': True}"/>
-                                        </div>  
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" ><label for="location_id" class=""/></span>
+                                        </div>
+                                        <field name="location_id" class="form-control" options="{'no_create': True, 'no_open': True}"/>
                                     </div>      
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="type_chantier" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <span class="fa fa-city form-control-icon"></span>
-                                            <field name="type_chantier" class="form-control"/>
-                                        </div>  
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" ><label for="type_chantier" class=""/><i class="fas fa-exclamation-triangle"></i></span>
+                                        </div>
+                                        <field name="type_chantier" class="form-control"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="emplacement_ids" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <span class="fas fa-users form-control-icon"></span>
-                                            <field name="emplacement_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
-                                        </div>  
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" ><label for="emplacement_ids" class=""/></span>
+                                        </div>
+                                        <field name="emplacement_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <label for="chantier_parent_id" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <span class="fa fa-city form-control-icon"></span>
-                                            <field name="chantier_parent_id" class="form-control" options="{'no_create': True, 'no_open': True}" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}"/>
-                                        </div>  
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" ><label for="chantier_parent_id" class=""/></span>
+                                        </div>
+                                        <field name="chantier_parent_id" class="form-control" options="{'no_create': True, 'no_open': True}" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}"/>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -93,41 +89,37 @@
                             </div>
                             <div class="row">
                                 <div class="col-md-4">
-                                    <label for="simplified_name" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <span class="fas fa-building form-control-icon"></span>
-                                            <field name="simplified_name" class="form-control"/>
-                                        </div>  
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><label for="simplified_name" class=""/></span>
+                                        </div>
+                                        <field name="simplified_name" class="form-control"/>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="periodicite" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <span class="fas fa-building form-control-icon"></span>
-                                            <field name="periodicite" class="form-control"/>
-                                        </div>  
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><label for="periodicite" class=""/></span>
+                                        </div>
+                                        <field name="periodicite" class="form-control"/>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <label for="heure_normal" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <span class="fas fa-building form-control-icon"></span>
-                                            <field name="heure_normal" class="form-control"/>
-                                        </div>  
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><label for="heure_normal" class=""/></span>
+                                        </div>
+                                        <field name="heure_normal" class="form-control"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-5">
-                                    <label for="historique_heure_normal_chantier" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <span class="fas fa-users form-control-icon"></span>
-                                            <field name="historique_heure_normal_chantier" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
-                                        </div>  
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><label for="historique_heure_normal_chantier" class=""/></span>
+                                        </div>
+                                        <field name="historique_heure_normal_chantier" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -153,7 +145,7 @@
                     <div class="card border-dark mb-3">
                         <div class="card-header">Les chantiers associés</div>
                         <div class="card-body text-dark">
-                            <group>
+                            <div class="col-12">
                                 <field name="chantier_ids" nolabel="1">
                                     <tree class="table" create="false" edit="false">
                                         <field name="name"/>
@@ -162,7 +154,7 @@
                                         <field name="type_chantier"/>
                                     </tree>
                                 </field>
-                            </group>
+                            </div>
                         </div>
                     </div> 
                     <div class="card border-dark mb-3">

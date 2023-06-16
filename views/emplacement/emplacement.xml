@@ -11,23 +11,21 @@
                             <div class="card-body text-dark">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label for="name" class=""/>
-                                        <div class="main">
-                                            <div class="form-group">
-                                                <span class="fas fa-comment form-control-icon"></span>
-                                                <field name="name" class="form-control"/>
-                                            </div>  
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" ><label for="name" class=""/><i class="fas fa-exclamation-triangle"></i></span>
+                                            </div>
+                                            <field name="name" class="form-control"/>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <label for="chantier_ids" class=""/>
-                                        <div class="main">
-                                            <div class="form-group">
-                                                <span class="fas fa-city form-control-icon"></span>
-                                                <field name="chantier_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
-                                            </div>  
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" ><label for="chantier_ids" class=""/></span>
+                                            </div>
+                                            <field name="chantier_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
                                         </div>
                                     </div>
                                 </div>
