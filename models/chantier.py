@@ -27,8 +27,8 @@ class fleet_vehicle_chantier(models.Model):
     #zone_id = fields.Many2one('fleet.zone.zone', 'Zone')
 
 	type_chantier = fields.Selection(
-		[('Chantier', 'Chantier Principale'), ('Atelier/Stock', 'Atelier/Stock'), ('Citerne Gasoil', 'Citerne Gasoil'),
-		 ('Poste Enrobé', 'Poste Enrobé')],
+		[('Chantier', 'Chantier Principale'),('Depot','Dépôt / Dépôt(ANX)'), ('Atelier/Stock', 'Atelier/Stock'), ('CG', 'Citerne Gasoil'),
+		 ('Poste', 'Poste Enrobé')],
 		string="Type Chantier", required=True)
 
 	emplacement_ids = fields.Many2many(
