@@ -7,11 +7,14 @@
     'version': '0.1',
     "license": 'LGPL-3',
 
-    'depends': ['base','stock', 'mail'],
+    'depends': [
+        'base',
+        'stock', 
+        'mail',
+        'configuration_module'
+        ],
 
     'data': [         
-        'views/views.xml',
-        'views/templates.xml',
         'security/groups.xml',
         'security/ir.model.access.csv',
 
@@ -24,6 +27,7 @@
         'views/emplacement/menu_emplacement.xml',
         'views/config/config_menu.xml',
         'views/responsable/responsable_chantier_menu.xml',
+        'views/res_users/res_users.xml'
     ],
 
     'demo': [
@@ -33,6 +37,6 @@
     'application': True ,
     'installable': True ,
     'auto_install': False,
-    'sequence': 1,
+    'sequence': 11,
     
 }

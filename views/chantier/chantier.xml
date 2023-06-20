@@ -5,172 +5,153 @@
         <field name="model">fleet.vehicle.chantier</field>
         <field name="arch" type="xml">
             <form>
-                <sheet>
-                    <div class="row">
-                        <div class="col-md-1"></div>
-                        <div class="col-md-4">
-                            <div class="card border-dark mb-3 bg-info">
-                                <div class="card-header text-center">
-                                    <h5>Code</h5>
-                                </div>
-                                <div class="card-body text-dark text-center">
-                                    <h1>
-                                        <field name="code"/>
-                                    </h1>
-                                </div>
-                            </div>
-                            <div class="card border-dark mb-3 bg-success">
-                                <div class="card-header text-center">
-                                    <h5>Nom</h5>
-                                </div>
-                                <div class="card-body text-dark text-center">
-                                    <h3><field name="name"/></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card border-dark mb-3">
-                        <div class="card-header">Informations sur Chantier</div>
-                        <div class="card-body text-dark">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" ><label for="ville" class=""/></span>
-                                        </div>
-                                        <field name="ville" class="form-control"/>
+                <div class="container-fliud px-3 mb-3">
+                    <div class="row align-items-center mb-3">
+                        <div class="col-12 col-xs-2 col-md-4">
+                            <div class="bg-white shadow p-3 mb-2">
+                                <div class="card my-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-text">DESIGNIATION CHANTIER  <i class="fas fa-exclamation-triangle" style="color:#f00000;"></i></h2>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" ><label for="location_id" class=""/></span>
-                                        </div>
-                                        <field name="location_id" class="form-control" options="{'no_create': True, 'no_open': True}"/>
-                                    </div>      
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" ><label for="type_chantier" class=""/><i class="fas fa-exclamation-triangle"></i></span>
-                                        </div>
-                                        <field name="type_chantier" class="form-control"/>
+                                    <div class="card-body text-dark text-center">
+                                        <h3><field name="name"/></h3>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" ><label for="emplacement_ids" class=""/></span>
-                                        </div>
-                                        <field name="emplacement_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                                </div>   
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="simplified_name" class=""/><i class="fas fa-exclamation-triangle" style="color:#f00000;"></i></span>
                                     </div>
+                                    <field name="simplified_name" class="form-control"/>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text" ><label for="chantier_parent_id" class=""/></span>
-                                        </div>
-                                        <field name="chantier_parent_id" class="form-control" options="{'no_create': True, 'no_open': True}" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}"/>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="code" class=""/><i class="fas fa-exclamation-triangle" style="color:#f00000;"></i></span>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="digital" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <field name="digital" widget="boolean_toggle"/>
-                                        </div>  
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><label for="simplified_name" class=""/></span>
-                                        </div>
-                                        <field name="simplified_name" class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><label for="periodicite" class=""/></span>
-                                        </div>
-                                        <field name="periodicite" class="form-control"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><label for="heure_normal" class=""/></span>
-                                        </div>
-                                        <field name="heure_normal" class="form-control"/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <div class="input-group mb-3">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><label for="historique_heure_normal_chantier" class=""/></span>
-                                        </div>
-                                        <field name="historique_heure_normal_chantier" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="grant_modification" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <field name="grant_modification" widget="boolean_toggle"/>
-                                        </div>  
-                                    </div>
-                                </div>
-                                <div class="col-md-3">
-                                    <label for="cofabri" class=""/>
-                                    <div class="main">
-                                        <div class="form-group">
-                                            <field name="cofabri" widget="boolean_toggle"/>
-                                        </div>  
-                                    </div>
+                                    <field name="code" class="form-control"/>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-12 col-xs-2 col-md-4">
+                            <div class="bg-white shadow p-3 mb-2">
+                                <div class="card my-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-text">INFORMATION CHANTIER</h2>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="type_chantier" class=""/><i class="fas fa-exclamation-triangle" style="color:#f00000;"></i></span>
+                                    </div>
+                                    <field name="type_chantier" class="form-control"/>
+                                </div>   
+                                <div class="input-group mb-3" attrs="{'invisible': [('type_chantier', '=', 'Chantier')]}">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="chantier_parent_id" class=""/></span>
+                                    </div>
+                                    <field name="chantier_parent_id" class="form-control" options="{'no_create': True, 'no_open': True}"/>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="location_id" class=""/></span>
+                                    </div>
+                                    <field name="location_id" class="form-control" options="{'no_create': True, 'no_open': True}"/>
+                                </div>      
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="emplacement_ids" class=""/></span>
+                                    </div>
+                                    <field name="emplacement_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="ville" class=""/></span>
+                                    </div>
+                                    <field name="ville" class="form-control"/>
+                                </div>
+                                <button name="action_create_citerne" class="btn btn-primary oe_right" string="Associé une Citerne" attrs="{'invisible': [('type_chantier', '!=', 'Chantier')]}" type="object"/>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xs-2 col-md-4">
+                            <div class="bg-white shadow p-3 mb-2">
+                                <div class="card my-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-text">CONFIGURATION CHANTIER</h2>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="digital" class=""/></span>
+                                    </div>
+                                    <field name="digital" widget="boolean_toggle" class="form-control"/>
+                                </div>  
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="grant_modification" class=""/></span>
+                                    </div>
+                                    <field name="grant_modification" widget="boolean_toggle" class="form-control"/>
+                                </div>   
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="cofabri" class=""/></span>
+                                    </div>
+                                    <field name="cofabri" widget="boolean_toggle" class="form-control"/>
+                                </div>   
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><label for="periodicite" class=""/></span>
+                                    </div>
+                                    <field name="periodicite" class="form-control"/>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"><label for="heure_normal" class=""/></span>
+                                    </div>
+                                    <field name="heure_normal" class="form-control"/>
+                                </div>
+                
+                            </div>
+                        </div>   
                     </div>
-
-                    <div class="card border-dark mb-3">
-                        <div class="card-header">Les chantiers associés</div>
-                        <div class="card-body text-dark">
-                            <div class="col-12">
-                                <field name="chantier_ids" nolabel="1">
-                                    <tree class="table" create="false" edit="false">
-                                        <field name="name"/>
-                                        <field name="code"/>
-                                        <field name="ville"/>
-                                        <field name="type_chantier"/>
+                    <div class="row align-items-center">
+                        <div class="col-12 col-xs-2 col-md-6">
+                            <div class="bg-white shadow p-3 mb-2">
+                                <div class="card my-3">
+                                    <div class="card-body text-center">
+                                        <h2 class="card-text">AFFECTATION</h2>
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="chantier_ids" class=""/></span>
+                                    </div>
+                                    <field name="chantier_ids" widget="many2many_tags" class="form-control"/>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" ><label for="responsables_ids" class=""/></span>
+                                    </div>
+                                    <field name="responsables_ids" widget="many2many_tags" class="form-control"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xs-2 col-md-6">
+                            <div class="bg-white shadow p-3 mb-2">
+                                <div class="card my-3">
+                                        <div class="card-body text-center">
+                                            <h2 class="card-text">HISTORIQUE DES HORAIRES</h2>
+                                        </div>
+                                    </div> 
+                                <field name="historique_heure_normal_chantier">
+                                    <tree default_order="day desc" editable="bottom" limit="2">
+                                        <field name="day"/>
+                                        <field name="heure_normal"/>
                                     </tree>
                                 </field>
                             </div>
                         </div>
-                    </div> 
-                    <div class="card border-dark mb-3">
-                        <div class="card-header">Les Responsables sur ce chantier</div>
-                        <div class="card-body text-dark">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="card text-white bg-dark mb-3">
-                                        <div class="card-body">
-                                            <field name="responsables_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True}" nolabel="1" class="form-control"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                </sheet>
+                </div>
+
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="activity_ids" widget="mail_activity"/>
@@ -185,9 +166,10 @@
         <field name="model">fleet.vehicle.chantier</field>
         <field name="arch" type="xml">
             <tree class="table">
-                <field name="name"/>
                 <field name="code"/>
-                <field name="ville"/>
+                <field name="name"/>
+                <field name="simplified_name"/>
+                <field name="periodicite"/>
                 <field name="type_chantier"/>
             </tree>
         </field>
@@ -198,9 +180,10 @@
         <field name="model">fleet.vehicle.chantier</field>
         <field name="arch" type="xml">
             <search>
-                <field name="name"/>
                 <field name="code"/>
-                <field name="ville"/>
+                <field name="name"/>
+                <field name="simplified_name"/>
+                <field name="periodicite"/>
                 <field name="type_chantier"/>
             </search>
         </field>
