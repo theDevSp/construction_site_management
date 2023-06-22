@@ -19,7 +19,7 @@ class fleet_vehicle_chantier(models.Model):
 	grant_modification = fields.Boolean('Autoriser modification')
 	periodicite = fields.Selection([("1","Quinzaine"),("2","Mensuelle")],default="1",string="Périodicité",tracking=True)
 	heure_normal = fields.Float('Plafond Heures de travails')
-	historique_heure_normal_chantier = fields.One2many('historique.heur.normal.chantier','chantier_id', string="Historique heure normale")
+	historique_heure_normal_chantier = fields.One2many('historique.heure.normal.chantier','chantier_id', string="Historique heure normale")
 
 
 	type_chantier = fields.Selection(
@@ -108,7 +108,7 @@ class fleet_vehicle_chantier(models.Model):
 
 class historique_heure_normal_chantier(models.Model):
 
-    _name = "historique.heur.normal.chantier"
+    _name = "historique.heure.normal.chantier"
 
     heure_normal = fields.Float('Plafond Heures de travail')
     day = fields.Date('Date d\'application') 

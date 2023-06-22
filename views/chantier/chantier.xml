@@ -9,6 +9,7 @@
                     <div class="row align-items-center mb-3">
                         <div class="col-12 col-xs-2 col-md-4">
                             <div class="bg-white shadow p-3 mb-2">
+                                <div class="alert alert-danger text-center mb-2"><i class="fas fa-exclamation-triangle" style="color: #f00000;"></i> Champs Obligatoire </div>
                                 <div class="card my-3">
                                     <div class="card-body text-center">
                                         <h2 class="card-text">DESIGNIATION CHANTIER  <i class="fas fa-exclamation-triangle" style="color:#f00000;"></i></h2>
@@ -33,6 +34,7 @@
                         </div>
                         <div class="col-12 col-xs-2 col-md-4">
                             <div class="bg-white shadow p-3 mb-2">
+                                <div class="alert alert-danger text-center mb-2"><i class="fas fa-exclamation-triangle" style="color: #f00000;"></i> Champs Obligatoire </div>
                                 <div class="card my-3">
                                     <div class="card-body text-center">
                                         <h2 class="card-text">INFORMATION CHANTIER</h2>
@@ -68,7 +70,9 @@
                                     </div>
                                     <field name="ville" class="form-control"/>
                                 </div>
-                                <button name="action_create_citerne" class="btn btn-primary oe_right" string="Associé une Citerne" attrs="{'invisible': [('type_chantier', '!=', 'Chantier')]}" type="object"/>
+                                <div class="">
+                                    <button name="action_create_citerne" class="btn btn-primary oe_right" string="Associé une Citerne" attrs="{'invisible': [('type_chantier', '!=', 'Chantier')]}" type="object"/>
+                                </div>
                             </div>
                         </div>
                         <div class="col-12 col-xs-2 col-md-4">
