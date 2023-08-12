@@ -7,7 +7,7 @@ class FleetVehicleChantierEmplacement(models.Model):
     _description = 'Équipe Chantier'
     
     name = fields.Char("Libellé",required=True)
-    abrv = fields.Char("abbreviation",required=True)
+    abrv = fields.Char("Nom simplifié",required=True)
 
     chantier_ids = fields.Many2many(
         'fleet.vehicle.chantier',

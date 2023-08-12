@@ -68,7 +68,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" ><label for="ville" class=""/></span>
                                     </div>
-                                    <field name="ville" class="form-control"/>
+                                    <field name="ville" class="form-control" options="{'no_open': True, 'no_create': True}"/>
                                 </div>
                                 <div class="">
                                     <button name="action_create_citerne" class="btn btn-primary oe_right" string="Associé une Citerne" attrs="{'invisible': [('type_chantier', '!=', 'Chantier')]}" type="object"/>
@@ -128,13 +128,13 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" ><label for="chantier_ids" class=""/></span>
                                     </div>
-                                    <field name="chantier_ids" widget="many2many_tags" class="form-control"/>
+                                    <field name="chantier_ids" widget="many2many_tags" class="form-control" options="{'no_open': True, 'no_create': True}"/>
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" ><label for="responsables_ids" class=""/></span>
                                     </div>
-                                    <field name="responsables_ids" widget="many2many_tags" class="form-control"/>
+                                    <field name="responsables_ids" widget="many2many_tags" class="form-control" options="{'no_open': True, 'no_create': True}"/>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +155,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="oe_chatter">
                     <field name="message_follower_ids" widget="mail_followers"/>
                     <field name="activity_ids" widget="mail_activity"/>

@@ -96,7 +96,7 @@ class fleet_vehicle_chantier(models.Model):
 
 		data_citerne_chantier = {
 			'name': self.name.title()+' (Citerne Gasoil)',
-			'type_chantier': 'Citerne Gasoil',
+			'type_chantier': 'CG',
 			'ville': self.ville,
 			'digital': False,
 			'chantier_parent_id': self.id

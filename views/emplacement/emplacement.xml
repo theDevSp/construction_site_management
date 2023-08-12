@@ -23,6 +23,16 @@
                                     <div class="col-md-12">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
+                                                <span class="input-group-text" ><label for="abrv" class=""/><i class="fas fa-exclamation-triangle"></i></span>
+                                            </div>
+                                            <field name="abrv" class="form-control"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
                                                 <span class="input-group-text" ><label for="chantier_ids" class=""/></span>
                                             </div>
                                             <field name="chantier_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
@@ -48,6 +58,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="name"/>
+                <field name="abrv"/>
                 <field name="chantier_ids" widget="many2many_tags" />
             </tree>
         </field>
@@ -59,6 +70,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="name"/>
+                <field name="abrv"/>
                 <field name="chantier_ids" widget="many2many_tags" />
             </search>
         </field>
