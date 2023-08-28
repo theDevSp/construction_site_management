@@ -23,10 +23,23 @@
                                     <div class="col-md-12">
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
-                                                <span class="input-group-text" ><label for="chantier_ids" class=""/></span>
+                                                <span class="input-group-text" ><label for="abrv" class=""/><i class="fas fa-exclamation-triangle"></i></span>
                                             </div>
-                                            <field name="chantier_ids" class="form-control" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                                            <field name="abrv" class="form-control"/>
                                         </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    
+                                        <div class="card my-3">
+                                            <div class="card-body text-center">
+                                                <h6 class="card-text">Chantiers</h6>
+                                            </div>
+                                            <div class="card-body text-dark text-center">
+                                                <field name="chantier_ids" widget="many2many_tags" options="{'no_open': True, 'no_create': True}"/>
+                                            </div>
+                                        </div>  
                                     </div>
                                 </div>
                             </div>

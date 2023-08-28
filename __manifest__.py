@@ -33,6 +33,19 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'construction_site_management/static/src/js/*.js',
+            'construction_site_management/static/src/js/**/*.js',
+            'construction_site_management/static/src/xml/*.xml',
+            'construction_site_management/static/src/xml/**/*.xml',
+            'construction_site_management/static/src/css/*.scss',
+        ],
+        'web.assets_common': [
+            'construction_site_management/static/src/**/*.scss',  
+        ],
+        
+    },
 
     'application': True ,
     'installable': True ,

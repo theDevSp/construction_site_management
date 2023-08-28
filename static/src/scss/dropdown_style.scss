@@ -1,0 +1,25 @@
+#custom-toggler {
+    .dropdown-menu {
+        max-width: 440px;
+    }
+    
+    .dropdown-menu > .dropdown-item {
+        max-width: 390px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    
+    input[type=text]{
+        max-width: 380px;
+    }
+
+    .dropdown-menu > .dropdown-item {
+        white-space: normal;
+        border-bottom: solid 1px;
+    }
+    
+    .dropdown-toggle>span {
+        max-width: 450px;
+        white-space: normal;
+    }
+}
