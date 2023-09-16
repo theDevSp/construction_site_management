@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<templates>
+<templates xml:space="preserve">
     <t t-name="construction_site_management.dropdown" owl="1">
 
-        <div id="custom-toggler" t-ref="toggler">
+        <div id="custom-toggler" t-ref="toggler-div">
             <Dropdown>
                 <t t-set-slot="toggler">
                     <span t-esc="state.display_name" />
                 </t>
                 <div class="input-group mx-2">
-                    <input type="text" class="form-control" placeholder="Chercher"
-                        autocomplete="off" t-ref="search-drop" />
+                    <input type="text" class="form-control" placeholder="Chercher" t-ref="searchInput" t-on-keydown="searchTasks"/>
                     <span class="input-group-text">
                         <i class="fas fa-search"></i>
                     </span>
                 </div>
                 <!-- "default" slot content is rendered inside a div -->
-                <t t-foreach="state.chantierList" t-as="chantier" t-key="chantier.id">
+                <t t-foreach="state.chantierList" t-as="chantier" t-key="chantier.id" >
                     <DropdownItem onSelected="() => this.selected(chantier)">
                         <span t-esc="chantier.code" /> - <span t-esc="chantier.name" />
                     </DropdownItem>
                 </t>
             </Dropdown>
+            <select id="countries">
+                <option value="">Select a Country</option>
+            </select>
         </div>
     </t>
 </templates>

@@ -7,14 +7,9 @@ export const chantierListService = {
     async start(env, { orm, user, rpc, notification }){
 
         async function fetchChantierList(){
-            const ids = []
-            await orm.searchRead("chantier.responsable.relation", [('user_id','=',user.userId)], ['chantier_id']).then((result) => {
-                result.forEach( element => {
-                    ids.append(element.chantier_id)
-                });
-                
-            })
-            return await orm.searchRead("fleet.vehicle.chantier", [('id','in',ids)], ['code','name'])
+            
+            
+            return await rpc("/construction_site_management/fetch_list")
         }
     
         return {

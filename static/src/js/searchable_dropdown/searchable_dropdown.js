@@ -1,4 +1,4 @@
-/** @odoo-module */
+/** @odoo-module **/
 
 import { Dropdown } from "@web/core/dropdown/dropdown"
 import { DropdownItem } from "@web/core/dropdown/dropdown_item"
@@ -11,14 +11,15 @@ export class ChantierDrop extends Component {
 
         this.state = useState({
             display_name: 'Choisir un Chantier',
-            chantierList: []
+            chantierList: [],
+            tempchantierList: []
         })
-        
-        this.searchInput = useRef("search-drop")
-        this.toggler = useRef("toggler")
+
+        this.searchInput = useRef("searchInput")
+        this.toggler = useRef("toggler-div")
         this.chantier_service = useService("chantierListService")
         onWillStart(() => this.chantierList())
-        useEffect(() => { 
+        useEffect(() => {
             this.styling_component()
         })
     }
@@ -29,18 +30,31 @@ export class ChantierDrop extends Component {
     }
 
     selected(chantier) {
-        this.state.display_name = chantier.code+' - '+chantier.name
+        this.state.display_name = chantier.code + ' - ' + chantier.name
     }
-    chantierList(){
+    chantierList() {
         const chantier_service = this.env.services.chantierListService
         chantier_service.chantierlist.then((result) => {
-            result.forEach( element => {
+            result.result.forEach(element => {
                 this.state.chantierList.push(element)
+                this.state.tempchantierList.push(element)
             });
-            
+
         })
+        
+    }
+
+
+    async searchTasks() {
+        const text = this.searchInput.el.value
+
+        if (text.length === 0) {
+            this.state.chantierList = this.state.tempchantierList
+        } else {
+            this.state.chantierList = this.state.chantierList.filter(chantier => String(chantier.name).toLowerCase().includes(text) || String(chantier.code).toLowerCase().includes(text))
+        }
     }
 }
 
 ChantierDrop.template = "construction_site_management.dropdown"
-ChantierDrop.components = {Dropdown, DropdownItem }
+ChantierDrop.components = { Dropdown, DropdownItem }

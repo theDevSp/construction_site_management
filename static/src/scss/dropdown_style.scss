@@ -2,24 +2,63 @@
     .dropdown-menu {
         max-width: 440px;
     }
-    
-    .dropdown-menu > .dropdown-item {
+
+    .dropdown-menu>.dropdown-item {
         max-width: 390px;
         margin-left: 15px;
         margin-right: 15px;
     }
-    
-    input[type=text]{
+
+    input[type=text] {
         max-width: 380px;
     }
 
-    .dropdown-menu > .dropdown-item {
+    .dropdown-menu>.dropdown-item {
         white-space: normal;
-        border-bottom: solid 1px;
+        border-bottom: solid 1px rgb(211, 211, 211);
     }
-    
+
     .dropdown-toggle>span {
         max-width: 450px;
         white-space: normal;
     }
+}
+
+clear-input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.clear-input-button {
+    /* button position */
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    bottom: 0;
+    /* button appearane */
+    justify-content: center;
+    align-items: center;
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    border: none;
+    border-radius: 50%;
+    background: gray;
+    margin: 0;
+    padding: 2px;
+    color: white;
+    font-size: 13px;
+    cursor: pointer;
+    /* hide the button initially */
+    display: none;
+}
+
+.clear-input-button:hover {
+    background: darkgray;
+}
+
+.clear-input--touched:focus+.clear-input-button,
+.clear-input--touched:hover+.clear-input-button,
+.clear-input--touched+.clear-input-button:hover {
+    display: inline-flex;
 }
