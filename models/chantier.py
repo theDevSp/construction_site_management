@@ -56,6 +56,7 @@ class fleet_vehicle_chantier(models.Model):
 			as_name = chantier.name if display_name else chantier.simplified_name
 			name = chantier.code + ' - ' + as_name
 			result.append((chantier.id, name))
+		
 		return result
 
 	@api.model
