@@ -9,7 +9,7 @@ export const chantierListService = {
         async function fetchChantierList(){
             
             
-            return await rpc("/construction_site_management/fetch_list")
+            return await rpc("/construction_site_management/get_all_chantiers")
         }
     
         return {
