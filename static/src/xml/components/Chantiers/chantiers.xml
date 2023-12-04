@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+    <t t-name="owl.chantiers" owl="1">
+        <div class="col-sm">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <label for="select-chantier">
+                            <strong>Chantier :</strong>
+                            <span>
+                                <i class="fas fa-exclamation-triangle" style="color: #f00000;"></i>
+                            </span>
+                        </label>
+                    </span>
+                </div>
+                <select required="True" id="select-chantier" class="form-control" name="chantier" placeholder="Sélectionner un Chantier"></select>
+            </div>
+        </div>
+    </t>
+</templates>

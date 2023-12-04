@@ -9,12 +9,12 @@
 
     'depends': [
         'base',
-        'stock', 
+        'stock',
         'mail',
         'configuration_module'
-        ],
+    ],
 
-    'data': [         
+    'data': [
         'security/groups.xml',
         'security/ir.model.access.csv',
 
@@ -36,20 +36,21 @@
     'assets': {
         'web.assets_backend': [
             'construction_site_management/static/src/js/*.js',
-            'construction_site_management/static/src/js/**/*.js',
+            'construction_site_management/static/src/js/**/**/*.js',
             'construction_site_management/static/src/xml/*.xml',
             'construction_site_management/static/src/xml/**/*.xml',
+            'construction_site_management/static/src/xml/**/**/*.xml',
             'construction_site_management/static/src/css/*.scss',
         ],
         'web.assets_common': [
-            'construction_site_management/static/src/**/*.scss',  
+            'construction_site_management/static/src/**/*.scss',
         ],
-        
+
     },
 
-    'application': True ,
-    'installable': True ,
+    'application': True,
+    'installable': True,
     'auto_install': False,
     'sequence': 11,
-    
+
 }
