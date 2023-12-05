@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <templates>
     <t t-name="owl.equipes" owl="1">
-        <div class="col-sm">
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <label for="select-equipe">
-                            <strong>Équipe :</strong>
-                        </label>
-                    </span>
-                </div>
-                <select id="select-equipe" class="form-control" name="equipe" placeholder="Sélectionner l'Équipe"></select>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text">
+                    <label for="select-equipe">
+                        <strong>Équipe :</strong>
+                    </label>
+                </span>
             </div>
+            <select id="select-equipe" class="form-control" name="equipe" placeholder="Sélectionner l'Équipe"></select>
         </div>
     </t>
 </templates>
